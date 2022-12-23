@@ -2,8 +2,11 @@
 	<main class="app">
 
 		<section class="greeting">
-		
-		<h2 class="title">Welkom {{ data() }}</h2>
+			<h2 class="title">Welkom {{ data() }}</h2>
+			<h3>Elke vrijdag voor 10:00 bestellen</h3>
+			<div class="actions">
+				<button class="delete" @click="signOut()">Uitloggen</button>
+			</div>
 		</section>
 
 		<section class="create-todo">
@@ -78,6 +81,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { getAuth } from "firebase/auth";
+import router from "../router";
 
 const auth = getAuth();
 
@@ -100,7 +104,7 @@ const signOut = () => {
 		.signOut()
 		.then(() => {
 			console.log("Sign Out completed");
-			this.$router.push("/");
+			router.push("/");
 		})
 		.catch((error) => console.log(error));
 }
@@ -378,5 +382,18 @@ input:checked~.bubble::after {
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
+}
+
+.delete {
+	display: block;
+    width: 10%;
+    font-size: 14px;
+    padding: 10px 10px 10px 10px;
+    color: #FFF;
+    background-color: var(--danger);
+    border-radius: 0.5rem;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 </style>
