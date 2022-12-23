@@ -8,7 +8,7 @@
        Yisual Broodjes website
       </div>
       <div class="nav-el">
-        <a href="https://github.com/vladpostu/vue-firebase-auth" target="blank"
+        <a href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel" target="blank"
           >GitHub Repo</a
         >
       </div>
