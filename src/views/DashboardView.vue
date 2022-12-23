@@ -2,12 +2,8 @@
 	<main class="app">
 
 		<section class="greeting">
-			<h2 class="title">
-				Yisual broodjes bestel app
-			</h2>
-			<button class="delete" @click="signOut">
-				Logout
-			</button>
+		
+		<h2 class="title">Welkom {{ data() }}</h2>
 		</section>
 
 		<section class="create-todo">
@@ -84,6 +80,11 @@ import { ref, onMounted, computed, watch } from 'vue'
 import { getAuth } from "firebase/auth";
 
 const auth = getAuth();
+
+const data = () => {
+	const email = auth.currentUser.email
+	return email
+}
 
 const todos = ref([])
 const name = ref('')
