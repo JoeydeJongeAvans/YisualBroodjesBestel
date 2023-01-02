@@ -7,7 +7,8 @@
         <img src="../assets/logo.png" width="50px" class="me-2" alt="logo-Yisual" />
         Yisual Broodjes website
       </div>
-      <div class="nav-el-right">
+      <div class="nav-el">
+        <img src="../assets/images/github.png" width="50px" class="me-2" alt="logo-Yisual" />
         <a href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel" target="blank">GitHub Repo</a>
       </div>
     </nav>
@@ -36,10 +37,22 @@
       </form>
     </div>
   </div>
+  <footer class="footer" >
+	<div class="waves">
+		<div class="wave" id="wave1"></div>
+		<div class="wave" id="wave2"></div>
+		<div class="wave" id="wave3"></div>
+		<div class="wave" id="wave4"></div>
+	</div>
+
+	<p style="opacity: 0.75;">Gemaakt door 🤍 Joey de</p>
+
+</footer>
 </template>
 
 <style>
 @import '../assets/styles/login.css';
+@import '../assets/styles/footer.css';
 </style>
   
 <script>

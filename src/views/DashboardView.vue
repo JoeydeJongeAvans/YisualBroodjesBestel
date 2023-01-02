@@ -18,7 +18,7 @@
 				<input type="text" name="choice" id="choice" placeholder="De beroemde Kip van de Bakplaat🍗"
 					v-model="input_choice" />
 
-				<h4>Bruin of Wit</h4>
+				<h4>Wit of Bruin</h4>
 				<div class="options">
 
 					<label>
