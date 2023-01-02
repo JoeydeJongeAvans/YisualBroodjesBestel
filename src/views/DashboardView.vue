@@ -4,7 +4,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
   <audio autoplay>
-    <source src="../assets/music/OK_LETS_GO.mp3" type="audio/mpeg" />
+    <source src="../assets/music/LetsGo.mp3" type="audio/mpeg" />
   </audio>
   <Navbar />
 
