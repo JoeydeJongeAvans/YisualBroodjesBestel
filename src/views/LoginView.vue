@@ -4,10 +4,10 @@
   <div class="navbar">
     <nav class="nav">
       <div class="nav-el" id="name_project">
-        <img src="../assets/logo.png" width="50px" class="me-2" alt="" />
+        <img src="../assets/logo.png" width="50px" class="me-2" alt="logo-Yisual" />
         Yisual Broodjes website
       </div>
-      <div class="nav-el">
+      <div class="nav-el-right">
         <a href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel" target="blank">GitHub Repo</a>
       </div>
     </nav>

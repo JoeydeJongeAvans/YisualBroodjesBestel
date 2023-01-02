@@ -12,12 +12,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD1LhjfJ6G5Xg0OFXSfy_AG0XQBYddScrE",
-    authDomain: "hellens-yisual-auth.firebaseapp.com",
-    projectId: "hellens-yisual-auth",
-    storageBucket: "hellens-yisual-auth.appspot.com",
-    messagingSenderId: "126521317042",
-    appId: "1:126521317042:web:08c05230be746ee461dbab"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGE_SENDER_ID,
+    appId: import.meta.env.APP_ID
   };
   
   // Initialize Firebase
