@@ -37,17 +37,17 @@
       </form>
     </div>
   </div>
-  <footer class="footer" >
-	<div class="waves">
-		<div class="wave" id="wave1"></div>
-		<div class="wave" id="wave2"></div>
-		<div class="wave" id="wave3"></div>
-		<div class="wave" id="wave4"></div>
-	</div>
-
-	<p style="opacity: 0.75;">Gemaakt door 🤍 Joey de</p>
-
-</footer>
+  <footer>
+    <span class="logo">Joey<br>de Jonge</span>
+    <div class="box">
+      <span class="box__copy">©</span>
+      <div class="box__group">
+        <p class="box__date">2023</p>
+        <hr>
+        <a class="box__link" href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel">Terms and Conditions</a>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style>
