@@ -1,63 +1,65 @@
 <template>
-
   <div class="background"></div>
-  <div class="navbar">
-    <nav class="nav">
-      <div class="nav-el" id="name_project">
-        <img src="../assets/logo.png" width="50px" class="me-2" alt="logo-Yisual" />
-        Yisual Broodjes website
-      </div>
-      <div class="nav-el">
-        <img src="../assets/images/github.png" width="50px" class="me-2" alt="logo-Yisual" />
-        <a href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel" target="blank">GitHub Repo</a>
-      </div>
-    </nav>
-  </div>
+  <Navbar />
   <div id="content">
     <div class="container">
       <form @submit.prevent="login">
         <h2 class="mb-3">Login</h2>
         <div class="input">
           <label for="email">Email address</label>
-          <input class="form-control" type="text" name="email" placeholder="email@adress.com" />
+          <input
+            class="form-control"
+            type="text"
+            name="email"
+            placeholder="email@adress.com"
+          />
         </div>
         <div class="input">
           <label for="password">Password</label>
-          <input class="form-control" type="password" name="password" placeholder="password123" />
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            placeholder="password123"
+          />
         </div>
         <div class="alternative-option mt-4">
-          You don't have an account? <span @click="moveToRegister">Register</span>
+          You don't have an account?
+          <span @click="moveToRegister">Register</span>
         </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
           Login
         </button>
-        <div class="alert alert-warning alert-dismissible fade show mt-5 d-none" role="alert" id="alert_1">
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div
+          class="alert alert-warning alert-dismissible fade show mt-5 d-none"
+          role="alert"
+          id="alert_1"
+        >
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
         </div>
       </form>
     </div>
   </div>
-  <footer>
-    <span class="logo">Joey<br>de Jonge</span>
-    <div class="box">
-      <span class="box__copy">©</span>
-      <div class="box__group">
-        <p class="box__date">2023</p>
-        <hr>
-        <a class="box__link" href="https://github.com/JoeydeJongeAvans/YisualBroodjesBestel">Terms and Conditions</a>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </template>
 
 <style>
-@import '../assets/styles/login.css';
-@import '../assets/styles/footer.css';
+@import "../assets/styles/login.css";
 </style>
-  
+
 <script>
+import {Footer, Navbar} from "../components";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 export default {
+  components: {
+    Footer,
+    Navbar
+  },
   data() {
     return {
       email: "",
@@ -90,4 +92,3 @@ export default {
   },
 };
 </script>
-
