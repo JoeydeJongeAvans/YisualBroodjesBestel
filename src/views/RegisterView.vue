@@ -11,7 +11,7 @@
             class="form-control"
             type="text"
             name="email"
-            placeholder="email@adress.com"
+            placeholder="email@yisual.com"
           />
         </div>
         <div class="input">

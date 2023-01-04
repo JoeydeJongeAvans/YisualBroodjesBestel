@@ -25,6 +25,7 @@
           name="choice"
           id="choice"
           placeholder="De beroemde Kip van de Bakplaat🍗"
+          required
           v-model="input_choice"
         />
 
@@ -70,6 +71,7 @@
           type="text"
           name="sauce"
           id="sauce"
+          required
           placeholder="Welke saus wens je op je broodje?"
           v-model="input_sauce"
         />
