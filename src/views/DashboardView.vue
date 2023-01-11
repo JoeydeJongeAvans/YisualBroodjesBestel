@@ -20,6 +20,15 @@
 
     <section class="create-todo">
       <form id="new-todo-form" @submit.prevent="addTodo">
+        <h4>Naam?</h4>
+        <input
+          type="text"
+          name="naam"
+          id="choice"
+          placeholder="Geef je naam op"
+          required
+          v-model="input_name"
+        />
         <h4>Welke keuze heb je gemaakt?</h4>
         <input
           type="text"
@@ -107,7 +116,7 @@
           </label>
 
           <div class="todo-content">
-            <input type="text" v-model="todo.content" />
+            <input type="text" v-model="todo.name" />
             <input type="text" v-model="todo.choice" />
             <input type="text" v-model="todo.sauce" />
             <input type="text" v-model="todo.exception" />
@@ -140,6 +149,7 @@ const data = () => {
 const todos = ref([]);
 const name = ref("");
 
+const input_name = ref("");
 const input_choice = ref("");
 const input_sauce = ref("");
 const input_exception = ref("");
@@ -182,6 +192,7 @@ watch(
 const addTodo = () => {
   if (
     input_choice.value.trim() === "" ||
+    input_name.value.trim() === "" ||
     input_sauce.value.trim() === "" ||
     input_category.value === null
   ) {
@@ -190,6 +201,7 @@ const addTodo = () => {
 
   todos.value.push({
     content: data(),
+    name: input_name.value,
     choice: input_choice.value,
     sauce: input_sauce.value,
     exception: input_exception.value,
