@@ -12,8 +12,9 @@
     <section class="greeting">
       <h2 class="title">Welkom {{ data() }}</h2>
       <h3>Elke vrijdag voor 10:00 bestellen</h3>
-      <div style="display: flex;" class="actions">
-        <button style="margin-right: 10px" class="logout-button" @click="goToFastfood()">Fastfood</button>
+      <div class="actions" style="display: flex; ">
+        <button style="margin-right: 10px" class="logout-button" @click="goToDashboard()">Dashboard</button>
+        <br>
         <button class="logout-button" @click="signOut()">Uitloggen</button>
       </div>
     </section>
@@ -25,12 +26,12 @@
           type="text"
           name="choice"
           id="choice"
-          placeholder="De beroemde Kip van de Bakplaat🍗"
+          placeholder="Maak een keuze voor je favoriete fastfood"
           required
           v-model="input_choice"
         />
 
-        <h4>Wit of Bruin</h4>
+        <h4>McDonalds of Domino's</h4>
         <div class="options">
           <label>
             <input
@@ -42,10 +43,10 @@
             />
             <span class="bubble business"></span>
             <img
-              src="../assets/images/whiteBread.png"
+              src="../assets/images/mac.png"
               width="50px"
               class="bread-icon"
-              alt="White bread"
+              alt="mac"
             />
           </label>
 
@@ -59,7 +60,7 @@
             />
             <span class="bubble personal"></span>
             <img
-              src="../assets/images/brownBread.png"
+              src="../assets/images/domino.png"
               width="50px"
               class="bread-icon"
               alt="Brown Bread"
@@ -67,31 +68,21 @@
           </label>
         </div>
 
-        <h4>Welke keuze heb je voor de saus?</h4>
-        <input
-          type="text"
-          name="sauce"
-          id="sauce"
-          required
-          placeholder="Welke saus wens je op je broodje?"
-          v-model="input_sauce"
-        />
-
         <h4>Uitzonderingen?</h4>
         <input
           type="text"
           name="exception"
           id="exception"
-          placeholder="Toevallig iets wat je niet op je broodje wilt?"
+          placeholder="Toevallig iets wat je niet wilt?"
           v-model="exception"
         />
 
-        <input type="submit" value="Voeg broodje toe" />
+        <input type="submit" value="Voeg fastfood toe" />
       </form>
     </section>
 
     <section class="todo-list">
-      <h2>Broodjes lijst</h2>
+      <h2>Fastfood lijst</h2>
       <div class="list" id="todo-list">
         <div
           v-for="todo in todos_asc"
@@ -109,7 +100,6 @@
           <div class="todo-content">
             <input type="text" v-model="todo.content" />
             <input type="text" v-model="todo.choice" />
-            <input type="text" v-model="todo.sauce" />
             <input type="text" v-model="todo.exception" />
           </div>
 
@@ -141,7 +131,6 @@ const todos = ref([]);
 const name = ref("");
 
 const input_choice = ref("");
-const input_sauce = ref("");
 const input_exception = ref("");
 const input_category = ref(null);
 
@@ -155,7 +144,7 @@ const signOut = () => {
     .catch((error) => console.log(error));
 };
 
-const goToFastfood = () => {
+const goToDashboard = () => {
   router.push("/fastfood")
 }
 
@@ -182,7 +171,6 @@ watch(
 const addTodo = () => {
   if (
     input_choice.value.trim() === "" ||
-    input_sauce.value.trim() === "" ||
     input_category.value === null
   ) {
     return;
@@ -191,7 +179,6 @@ const addTodo = () => {
   todos.value.push({
     content: data(),
     choice: input_choice.value,
-    sauce: input_sauce.value,
     exception: input_exception.value,
     category: input_category.value,
     done: false,

@@ -23,6 +23,15 @@ const routes = [
       authRequired: true,
     },
   },
+  {
+    path: "/fastfood",
+    name: "fastfood",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/FastFoodView.vue"),
+    meta: {
+      authRequired: true,
+    },
+  },
 ];
 
 const router = createRouter({
