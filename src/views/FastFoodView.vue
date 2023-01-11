@@ -145,7 +145,7 @@ const signOut = () => {
 };
 
 const goToDashboard = () => {
-  router.push("/fastfood")
+  router.push("/dashboard")
 }
 
 const todos_asc = computed(() =>
